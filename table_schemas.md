@@ -9,8 +9,14 @@
 `Users(user_id, card_barcode, last_name, first_name, phone_number, email, address, postal_code, date_of_birth, fines_owed[derived])`
  - Key: user_id
 
-`Book(isbn, title, author(s), publisher, volume, release_date, total_copies[derived])`
+`Book(isbn, title, publisher, volume, release_date, total_copies[derived])`
  - Key: isbn
+
+`Author_ISBN(isbn, authors_id)`
+ - Key: isbn OR authors_id
+
+`Authors(authors_id, author_name)`
+ - Key authors_id + author_name
 
 `DVD(dvd_id, title, release_year, studio, maturity_rating, type, total_copies[derived])`
  - Key: dvd_id
