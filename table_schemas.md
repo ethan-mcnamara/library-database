@@ -36,8 +36,11 @@
 `Fines(user_id, amount, inventory_id, first_issued, most_recent_increase_amount, most_recent_increase_date, next_increase[derived])`
  - Key: user_id
 
-`Title_Genre(title_id, genre_id)`
- - Key: title_id + genre_id
+`DVD_Genre(dvd_id, genre_id)`
+ - Key: dvd_id + genre_id
+
+`CD_Genre(cd_id, genre_id)`
+ - Key: cd_id + genre_id
 
 `Genre(genre_id, genre)`
  - Key: genre_id OR genre
