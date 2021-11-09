@@ -9,7 +9,7 @@
 `Users(user_id, card_barcode, last_name, first_name, phone_number, email, address, postal_code, date_of_birth, fines_owed[derived])`
  - Key: user_id
 
-`Book(isbn, title, publisher, volume, release_date, total_copies[derived])`
+`Book(isbn, title, publisher, volume, release_year, total_copies[derived])`
  - Key: isbn
 
 `Author_ISBN(isbn, authors_id)`
