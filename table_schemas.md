@@ -27,7 +27,7 @@
 `Video_Game(video_game_id, title, release_year, studio, game_category, console, maturity_rating, total_copies[derived])`
  - Key: video_game_id
 
-`Inventory(inventory_id, isbn, status[derived])`
+`Inventory(inventory_id, item_id, status[derived])`
  - Key: inventory_id
 
 `Transaction(transaction_id, user_id, inventory_id, due_date, return_status)`
