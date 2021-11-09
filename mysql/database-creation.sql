@@ -8,7 +8,7 @@ CREATE DATABASE IF NOT EXISTS Library;
 USE Library;
 
 -- Create the Users table
-DROP TABLE IF NOT EXISTS Users;
+DROP TABLE IF EXISTS Users;
 CREATE TABLE Users (
     user_id INT(13) NOT NULL AUTO_INCREMENT,
     card_barcode INT(24), -- May be null if the user does not yet have a card
@@ -32,7 +32,7 @@ ALTER Table Users
     ADD UNIQUE (card_barcode);
 
 -- Create the Book table
-DROP TABLE IF NOT EXISTS Book;
+DROP TABLE IF EXISTS Book;
 CREATE TABLE Book (
     isbn INT(13) NOT NULL,
     title VARCHAR(200) NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE Book (
 ENGINE=InnoDB;
 
 -- Create the Author_ISBN table
-DROP TABLE IF NOT EXISTS Author_ISBN;
+DROP TABLE IF EXISTS Author_ISBN;
 CREATE TABLE Author_ISBN (
     isbn INT(13) NOT NULL,
     authors_id INT(12) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE Author_ISBN (
 ENGINE=InnoDB;
 
 -- Create the Authors table
-DROP TABLE IF NOT EXISTS Authors;
+DROP TABLE IF EXISTS Authors;
 CREATE TABLE Authors (
     authors_id INT(12) NOT NULL AUTO_INCREMENT,
     author_name VARCHAR(100) NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE Authors (
 ENGINE=InnoDB;
 
 -- Create the DVD table
-DROP TABLE IF NOT EXISTS DVD;
+DROP TABLE IF EXISTS DVD;
 CREATE TABLE DVD (
     dvd_id INT(13) NOT NULL AUTO_INCREMENT,
     title VARCHAR(200) NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE DVD (
 ENGINE = InnoDB;
 
 -- Create the CD table
-DROP TABLE IF NOT EXISTS CD;
+DROP TABLE IF EXISTS CD;
 CREATE TABLE CD (
     cd_id INT(13) NOT NULL AUTO_INCREMENT,
     title VARCHAR(200) NOT NULL,
@@ -92,7 +92,7 @@ CREATE TABLE CD (
 ENGINE = InnoDB;
 
 -- Create the Video_Game table
-DROP TABLE IF NOT EXISTS Video_Game;
+DROP TABLE IF EXISTS Video_Game;
 CREATE TABLE Video_Game (
     video_game_id INT(13) AUTO_INCREMENT,
     title VARCHAR(200) NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE Video_Game (
 ENGINE=InnoDB;
 
 -- Create the Inventory table
-DROP TABLE IF NOT EXISTS Inventory;
+DROP TABLE IF EXISTS Inventory;
 CREATE TABLE Inventory (
     inventory_id INT(16) NOT NULL AUTO_INCREMENT,
     item_id INT(13) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE Inventory (
 ENGINE=InnoDB;
 
 -- Create the Transaction table
-DROP TABLE IF NOT EXISTS Transaction;
+DROP TABLE IF EXISTS Transaction;
 CREATE TABLE Transaction (
     transaction_id INT(13) NOT NULL AUTO_INCREMENT,
     user_id INT(13) NOT NULL,
@@ -141,7 +141,7 @@ CREATE TABLE Transaction (
 ENGINE=InnoDB;
 
 -- Create the Fines table
-DROP TABLE IF NOT EXISTS Fines;
+DROP TABLE IF EXISTS Fines;
 CREATE TABLE Fines (
     user_id INT(13) NOT NULL,
     amount FLOAT(7,2) NOT NULL,
@@ -155,7 +155,7 @@ CREATE TABLE Fines (
 ENGINE=InnoDB;
 
 -- Create the DVD_Genre Table
-DROP TABLE IF NOT EXISTS DVD_Genre;
+DROP TABLE IF EXISTS DVD_Genre;
 CREATE TABLE DVD_Genre (
     dvd_id INT(13) NOT NULL,
     genre_id INT(13) NOT NULL,
@@ -164,7 +164,7 @@ CREATE TABLE DVD_Genre (
 ENGINE=InnoDB;
 
 -- Create the CD_Genre Table
-DROP TABLE IF NOT EXISTS CD_Genre;
+DROP TABLE IF EXISTS CD_Genre;
 CREATE TABLE CD_Genre (
     cd_id INT(13) NOT NULL,
     genre_id INT(13) NOT NULL,
@@ -173,7 +173,7 @@ CREATE TABLE CD_Genre (
 ENGINE=InnoDB;
 
 -- Create the Genres Table
-DROP TABLE IF NOT EXISTS Genres;
+DROP TABLE IF EXISTS Genres;
 CREATE TABLE Genres (
     genre_id INT(13) NOT NULL AUTO_INCREMENT,
     genre VARCHAR(100) NOT NULL,
