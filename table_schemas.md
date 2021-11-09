@@ -33,7 +33,7 @@
 `Transaction(transaction_id, user_id, inventory_id, due_date, return_status)`
  - Key: transaction_id
 
-`Fines(user_id, amount, inventory_id, date_issued, next_increase[date - derived])`
+`Fines(user_id, amount, inventory_id, first_issued, next_increase[derived])`
  - Key: user_id
 
 `Title_Genre(title_id, genre_id)`
