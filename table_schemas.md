@@ -61,7 +61,7 @@ List of transactions whose status is overdue
  - Meant for use by library staff who do not need access to all of the user's personally identifiable information (PII) 
  - Could be used to create mailing lists or library alerts
 
-`Fined_Users(user_id, card_barcode, last_name, first_name, phone_number, email, fines_owed[derived])`
+`Fined_Users(user_id, card_barcode, last_name, first_name, phone_number, email, fines_owed)`
  - List of users who currently owe fines
  - Could be used to send reminders to all users with outstanding fines
 
