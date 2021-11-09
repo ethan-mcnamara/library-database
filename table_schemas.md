@@ -49,7 +49,7 @@ List of transactions whose status is overdue
  - This record will only grow, and may be expunged when necessary
 
 `Public_Info_Users(user_id, card_barcode, last_name, first_name, phone_number, email)`
- - Meant for use by libry staff who do not need access to all of the user's PII 
+ - Meant for use by library staff who do not need access to all of the user's personally identifiable information (PII) 
  - Could be used to create mailing lists or library alerts
 
 `Fined_Users(user_id, card_barcode, last_name, first_name, phone_number, email, fines_owed[derived])`
