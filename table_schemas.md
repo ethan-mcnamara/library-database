@@ -21,7 +21,7 @@
 `DVD(dvd_id, title, release_year, studio, maturity_rating, type, total_copies[derived])`
  - Key: dvd_id
 
-`CD(cd_id, title, artist, studio, release_year, explicit, maturity_rating, type)`
+`CD(cd_id, title, artist, studio, release_year, explicit, maturity_rating, type, total_copies[derived])`
  - Key: cd_id
 
 `Video_Game(video_game_id, title, release_year, studio, game_category, console, maturity_rating, total_copies[derived])`
