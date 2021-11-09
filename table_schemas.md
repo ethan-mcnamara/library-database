@@ -6,7 +6,7 @@
 
 ## Tables
 
-`Users(user_id, card_barcode, last_name, first_name, phone_number, email, address, postal_code, date_of_birth, fines_owed[derived])`
+`Users(user_id, card_barcode, last_name, first_name, phone_number, email, street_address, city, province, country, postal_code, date_of_birth, fines_owed[derived])`
  - Key: user_id
 
 `Book(isbn, title, publisher, volume, release_year, total_copies[derived])`
