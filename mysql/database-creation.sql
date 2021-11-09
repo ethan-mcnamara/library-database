@@ -18,6 +18,8 @@ CREATE TABLE Users (
     email VARCHAR(65) NOT NULL,
     street_address VARCHAR(100) NOT NULL,
     city VARCHAR(35) NOT NULL,
+    province CHAR(2) NOT NULL,
+    country CHAR(3) NOT NULL,
     postal_code CHAR(6) NOT NULL,
     date_of_birth DATE NOT NULL,
     fines_owed FLOAT(7,2) NOT NULL DEFAULT(0.00),
