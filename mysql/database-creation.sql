@@ -37,7 +37,7 @@ CREATE TABLE `Book` (
     , `publisher` VARCHAR(150) NOT NULL
     , `volume` INT
     , `release_year` YEAR NOT NULL
-    , `total_copies` INT NOT NULL DEFAULT(0)
+    , `total_copies` INT NOT NULL DEFAULT(1)
     , PRIMARY KEY (`book_id`)
     , CONSTRAINT `unique_isbn` UNIQUE (`isbn`)
 )
@@ -52,14 +52,14 @@ CREATE TABLE `Authors` (
 )
 ENGINE=`InnoDB`;
 
--- Create the Author_ISBN table
-DROP TABLE IF EXISTS `Author_ISBN`;
+-- Create the Author_BookID table
+DROP TABLE IF EXISTS `Author_BookID`;
 CREATE TABLE `Author_BookID` (
       `book_id` INT NOT NULL
     , `authors_id` INT NOT NULL
-    , PRIMARY KEY (`book_id`)
+    , PRIMARY KEY (`book_id`, `authors_id`)
     , FOREIGN KEY (`book_id`) REFERENCES `Book`(`book_id`) ON UPDATE CASCADE ON DELETE CASCADE
-    , FOREIGN KEY (`author_id`) REFERENCES `Authors`(`authors_id`) ON UPDATE CASCADE ON DELETE RESTRICT
+    , FOREIGN KEY (`authors_id`) REFERENCES `Authors`(`authors_id`) ON UPDATE CASCADE ON DELETE RESTRICT
 )
 ENGINE=`InnoDB`;
 
@@ -111,7 +111,7 @@ CREATE TABLE `Video_Game` (
         , 'idle'
         , 'educational'
         , 'children' 
-        ) NOT NULL,
+        ) NOT NULL
     , `console` ENUM('computer', 'playstation', 'xbox', 'wii') NOT NULL
     , `maturity_rating` ENUM('E', 'E10+', 'T', 'M', 'A', 'RP') NOT NULL
     , `total_copies` INT NOT NULL DEFAULT(1)
@@ -182,7 +182,7 @@ ENGINE=`InnoDB`;
 -- Create the DVD_Genre Table
 DROP TABLE IF EXISTS `DVD_Genre`;
 CREATE TABLE `DVD_Genre` (
-    , `dvd_id` INT NOT NULL
+      `dvd_id` INT NOT NULL
     , `genre_id` INT NOT NULL
     , PRIMARY KEY (`dvd_id`, `genre_id`)
     , FOREIGN KEY (`genre_id`) REFERENCES `Genres`(`genre_id`) ON UPDATE CASCADE ON DELETE RESTRICT
