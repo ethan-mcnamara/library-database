@@ -299,6 +299,39 @@ INSERT INTO `Book` (
         , 1
         , '2009'
       );
+
+--
+-- Generate the author tuple in the Authors table for the books generated
+INSERT INTO `Authors` (
+      `author_name`
+  )
+    VALUES (
+          'JK Rowling'
+      );
+INSERT INTO `Authors` (
+      `author_name`
+  )
+    VALUES (
+          'J.R.R. Tolkien'
+      );
+INSERT INTO `Authors` (
+      `author_name`
+  )
+    VALUES (
+          'Hector Garcia-Molina'
+      );
+INSERT INTO `Authors` (
+      `author_name`
+  )
+    VALUES (
+          'Jeffrey D. Ullman'
+      );
+INSERT INTO `Authors` (
+      `author_name`
+  )
+    VALUES (
+          'Jennifer Widom'
+      );
 --
 -- Generate author_bookid tuples for the added books
 INSERT INTO `Author_BookID` (
@@ -414,38 +447,6 @@ INSERT INTO `Author_BookID` (
         , 5
       );
 --
--- Generate the author tuple in the Authors table for the books generated
-INSERT INTO `Authors` (
-      `author_name`
-  )
-    VALUES (
-          'JK Rowling'
-      );
-INSERT INTO `Authors` (
-      `author_name`
-  )
-    VALUES (
-          'J.R.R. Tolkien'
-      );
-INSERT INTO `Authors` (
-      `author_name`
-  )
-    VALUES (
-          'Hector Garcia-Molina'
-      );
-INSERT INTO `Authors` (
-      `author_name`
-  )
-    VALUES (
-          'Jeffrey D. Ullman'
-      );
-INSERT INTO `Authors` (
-      `author_name`
-  )
-    VALUES (
-          'Jennifer Widom'
-      );
---
 -- Add the books to the Inventory table
 INSERT INTO `Inventory` (
       `item_id`
@@ -554,7 +555,7 @@ INSERT INTO `Transaction` (
     VALUES (
           2
         , 1
-        , '2021-09-31'
+        , STR_TO_DATE('2021-09-30','%Y-%m-%d')
         , 'overdue'
       );
 INSERT INTO `Transaction` (
@@ -566,7 +567,7 @@ INSERT INTO `Transaction` (
     VALUES (
           2
         , 2
-        , '2021-09-31'
+        , STR_TO_DATE('2021-09-30','%Y-%m-%d')
         , 'returned'
       );
 INSERT INTO `Transaction` (
@@ -578,7 +579,7 @@ INSERT INTO `Transaction` (
     VALUES (
           2
         , 3
-        , '2021-12-31'
+        , STR_TO_DATE('2021-12-31','%Y-%m-%d')
         , 'on-loan'
       );
 INSERT INTO `Transaction` (
@@ -590,7 +591,7 @@ INSERT INTO `Transaction` (
     VALUES (
           5
         , 4
-        , '2021-12-31'
+        , STR_TO_DATE('2021-12-31','%Y-%m-%d')
         , 'on-loan'
       );
 INSERT INTO `Transaction` (
@@ -602,7 +603,7 @@ INSERT INTO `Transaction` (
     VALUES (
           4
         , 5
-        , '2021-12-31'
+        , STR_TO_DATE('2021-12-31','%Y-%m-%d')
         , 'returned'
       );
 INSERT INTO `Transaction` (
@@ -614,7 +615,7 @@ INSERT INTO `Transaction` (
     VALUES (
           5
         , 6
-        , '2021-10-31'
+        , STR_TO_DATE('2021-10-31','%Y-%m-%d')
         , 'overdue'
       );
 --
@@ -622,7 +623,7 @@ INSERT INTO `Transaction` (
 INSERT INTO `Fines` (
       `user_id`
     , `amount`
-    , `inventory_id`
+    , `transaction_id`
     , `most_recent_increase_amount`
     , `most_recent_increase_date`
     , `first_issued`
@@ -630,17 +631,17 @@ INSERT INTO `Fines` (
   )
     VALUES (
           2
-        , 2.99
+        , 1.99
         , 1
         , 1.99
-        , '2021-11-11'
-        , '2021-11-04'
-        , '2021-11-18'
+        , STR_TO_DATE('2021-11-11','%Y-%m-%d')
+        , STR_TO_DATE('2021-11-04','%Y-%m-%d')
+        , STR_TO_DATE('2021-11-18','%Y-%m-%d')
       );
 INSERT INTO `Fines` (
       `user_id`
     , `amount`
-    , `inventory_id`
+    , `transaction_id`
     , `most_recent_increase_amount`
     , `most_recent_increase_date`
     , `first_issued`
@@ -649,9 +650,9 @@ INSERT INTO `Fines` (
     VALUES (
           5
         , 0.99
-        , 1
+        , 6
         , 0.99
-        , '2021-10-31'
-        , '2021-10-31'
-        , '2021-11-07'
+        , STR_TO_DATE('2021-10-31','%Y-%m-%d')
+        , STR_TO_DATE('2021-10-31','%Y-%m-%d')
+        , STR_TO_DATE('2021-11-07','%Y-%m-%d')
       );
