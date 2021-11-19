@@ -25,11 +25,11 @@ CREATE VIEW `Returned_Transactions` AS
 -- Create the Public_Info_Users view
 DROP VIEW IF EXISTS `Public_Info_Users`;
 CREATE VIEW `Public_Info_Users` AS 
-    ( SELECT `user_id`, `card_barcode`, `last_name`, `first_name`, `phone_number`, `email`
+    ( SELECT `user_id`, `last_name`, `first_name`, `phone_number`, `email`
       FROM `Users` );
 
 -- Create the Fined_Users view
 DROP VIEW IF EXISTS `Fined_Users`;
 CREATE VIEW `Fined_Users` AS 
-    ( SELECT `user_id`, `card_barcode`, `last_name`, `first_name`, `phone_number`, `email`, `fines_owed`
+    ( SELECT `user_id`, `last_name`, `first_name`, `phone_number`, `email`, `fines_owed`
       FROM `Users` NATURAL JOIN `Fines`);
